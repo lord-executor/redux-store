@@ -1,1 +1,22 @@
 <h1>Hello</h1>
+<div
+  class="book-item"
+  *ngFor="let book of (books | async)"
+>
+  <p>{{book.volumeInfo.title}}</p><span> by {{book.volumeInfo.authors}}</span>
+  <button
+    (click)="addBook(book.id)"
+    data-test="add-button"
+  >Add to Collection</button>
+</div>
+<hr />
+<div
+  class="book-item"
+  *ngFor="let book of (bookCollection | async)"
+>
+  <p>{{book.volumeInfo.title}}</p><span> by {{book.volumeInfo.authors}}</span>
+  <button
+    (click)="removeBook(book.id)"
+    data-test="remove-button"
+  >Remove</button>
+</div>
