@@ -20,3 +20,16 @@
     data-test="remove-button"
   >Remove</button>
 </div>
+<hr />
+<code><pre>BackgroundLayer: {{ (backgroundLayer | async)?.label }}
+Overlays: {{ overlays | async | json }}
+</pre></code>
+<hr />
+<button type="button" (click)="setBgLayer('first')">first</button>
+<button type="button" (click)="setBgLayer('second')">second</button>
+<button type="button" (click)="setBgLayer('third')">third</button>
+<br>
+<button type="button" (click)="addOverlay(0)">PopulationDensity</button>
+<button type="button" (click)="addOverlay(1)">Elevation</button>
+<button type="button" (click)="addOverlay(2)">Temperature</button>
+<button type="button" (click)="clearOverlay()">Clear</button>
